@@ -1,0 +1,287 @@
+<!-- Diego Antonio García Padilla (A01710777) -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="image/png" sizes="32x32" rel="icon" href="./favicon.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>HTML Semántico</title>
+  </head>
+  <body>
+    <header>
+      <h1>HTML Semántico</h1>
+    </header>
+    <div class="two-col">
+      <section>
+        <h2>Q&A de HTML Semántico</h2>
+        <article>
+          <h3>¿Cuál es la diferencia entre Internet y la World Wide Web?</h3>
+          <p>
+            Internet es una red de redes, mientras que la World Wide Web es un
+            sistema de información que se encuentra en Internet.
+          </p>
+        </article>
+        <article>
+          <h3>¿Cuáles son las partes de un URL?</h3>
+          <p>Un URL (Uniform Resource Locator) tiene las siguientes partes:</p>
+          <ul>
+            <li><strong>Protocolo:</strong> HTTP, HTTPS, FTP, etc.</li>
+            <li>
+              <strong>Dominio:</strong> www.google.com, www.youtube.com, etc.
+            </li>
+            <li>
+              <strong>Puerto:</strong> 80, 443, etc. (usualmente no se
+              especifica)
+            </li>
+            <li><strong>Ruta:</strong> /search, /watch, etc.</li>
+            <li><strong>Query:</strong> ?q=hello, ?v=dQw4w9WgXcQ, etc.</li>
+            <li><strong>Fragmento:</strong> #section1, #section2, etc.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>
+            ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT,
+            PATCH, DELETE?
+          </h3>
+          <p>
+            <strong>GET:</strong> Solicita una representación de un recurso
+            específico.
+          </p>
+          <p>
+            <strong>HEAD:</strong> Solicita una respuesta idéntica a la de una
+            petición GET, pero sin el cuerpo de la respuesta.
+          </p>
+          <p>
+            <strong>POST:</strong> Envía datos al servidor para ser procesados.
+          </p>
+          <p>
+            <strong>PUT:</strong> Reemplaza todas las representaciones actuales
+            del recurso de destino con la carga útil de la petición.
+          </p>
+          <p>
+            <strong>PATCH:</strong> Aplica modificaciones parciales a un
+            recurso.
+          </p>
+          <p>
+            <strong>DELETE:</strong> Borra un recurso específico del servidor.
+          </p>
+        </article>
+        <article>
+          <h3>
+            ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por
+            ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por
+            qué?
+          </h3>
+          <p>
+            Se debe utilizar el método <strong>POST</strong> ya que este método
+            envía datos al servidor para ser procesados.
+          </p>
+        </article>
+        <article>
+          <h3>
+            ¿Qué método HTTP se utiliza cuando a través de un navegador web se
+            accede a una página a través de un URL?
+          </h3>
+          <p>
+            Se utiliza el método <strong>GET</strong> ya que este método
+            solicita una representación de un recurso específico.
+          </p>
+        </article>
+        <article>
+          <h3>
+            Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué
+            significa esto? ¿Ocurrió algún error?
+          </h3>
+          <p>
+            Un código de respuesta HTTP 200 indica que la solicitud ha tenido
+            éxito. No se ha producido ningún error.
+          </p>
+        </article>
+        <article>
+          <h3>
+            ¿Es responsabilidad del desarrollador corregir un sitio web si un
+            usuario reporta que intentó acceder al sitio y se encontró con un
+            error 404? ¿Por qué?
+          </h3>
+          <p>
+            Sí, es responsabilidad del desarrollador corregir un sitio web si un
+            usuario reporta que intentó acceder al sitio y se encontró con un
+            error 404. El error 404 indica que el recurso solicitado no se
+            encuentra en el servidor, por lo que el desarrollador debe corregir
+            el sitio web para que el recurso solicitado esté disponible.
+          </p>
+        </article>
+        <article>
+          <h3>
+            ¿Es responsabilidad del desarrollador corregir un sitio web si un
+            usuario reporta que intentó acceder al sitio y se encontró con un
+            error 500? ¿Por qué?
+          </h3>
+          <p>
+            Sí, es responsabilidad del desarrollador corregir un sitio web si un
+            usuario reporta que intentó acceder al sitio y se encontró con un
+            error 500. El error 500 indica que ha ocurrido un error interno en
+            el servidor, por lo que el desarrollador debe corregir el sitio web
+            para que el error no se presente.
+          </p>
+        </article>
+        <article>
+          <h3>
+            ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado
+            (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5
+            estén desaprobados.
+          </h3>
+          <p>
+            Un atributo HTML5 desaprobado es un atributo que ya no se recomienda
+            utilizar. Algunos elementos de HTML 4 que en HTML5 están
+            desaprobados son:
+          </p>
+          <ul>
+            <li>font</li>
+            <li>center</li>
+            <li>strike</li>
+          </ul>
+        </article>
+        <article>
+          <h3>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</h3>
+          <p>Algunas diferencias principales entre HTML 4 y HTML5 son:</p>
+          <table>
+            <tr>
+              <th>HTML 4</th>
+              <th>HTML5</th>
+            </tr>
+            <tr>
+              <td>Basado en SGML</td>
+              <td>Basado en XML</td>
+            </tr>
+            <tr>
+              <td>Requiere el uso de DTD</td>
+              <td>No requiere el uso de DTD</td>
+            </tr>
+            <tr>
+              <td>Requiere el uso de etiquetas de cierre</td>
+              <td>No requiere el uso de etiquetas de cierre</td>
+            </tr>
+            <tr>
+              <td>Menos semántico</td>
+              <td>Más semántico</td>
+            </tr>
+            <tr>
+              <td>Menos soporte para multimedia</td>
+              <td>Más soporte para multimedia</td>
+            </tr>
+          </table>
+        </article>
+        <article>
+          <h3>¿Qué componentes de estructura y estilo tiene una tabla?</h3>
+          <p>Una tabla tiene los siguientes componentes:</p>
+          <table>
+            <tr>
+              <th>Encabezado (th)</th>
+              <th>Encabezado (th)</th>
+            </tr>
+            <tr>
+              <td>Celda (td)</td>
+              <td>Celda (td)</td>
+            </tr>
+          </table>
+        </article>
+        <article>
+          <h3>¿Cuáles son los principales controles de una forma HTML5?</h3>
+          <p>Algunos de los principales controles de una forma HTML5 son:</p>
+          <table>
+            <tr>
+              <th>Input</th>
+              <th>Textarea</th>
+              <th>Select</th>
+              <th>Button</th>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" placeholder="Input" />
+              </td>
+              <td>
+                <textarea placeholder="Textarea"></textarea>
+              </td>
+              <td>
+                <select>
+                  <option value="1">Opción 1</option>
+                  <option value="2">Opción 2</option>
+                  <option value="3">Opción 3</option>
+                </select>
+              </td>
+              <td>
+                <button>Botón</button>
+              </td>
+            </tr>
+          </table>
+        </article>
+        <article>
+          <h3>
+            ¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes
+            utilizar la siguiente página para descubrirlo: http://html5test.com/
+            (Al responder la pregunta recuerda poner el navegador que utilizas)
+          </h3>
+          <p>
+            El navegador que utilizo es Microsoft Edge y tiene un soporte de
+            <strong>538</strong> de 571 puntos.
+          </p>
+        </article>
+        <article>
+          <h3>
+            Sobre el ciclo de vida y desarrollo de los sistemas de información:
+            <ul>
+              <li>¿Qué es el ciclo de vida de los sistemas de información?</li>
+              <li>
+                ¿Qué es el ciclo de desarrollo de sistemas de información?
+              </li>
+            </ul>
+          </h3>
+          <p>
+            El ciclo de vida de los sistemas de información es el proceso de
+            creación y mantenimiento de sistemas de información.
+          </p>
+          <p>
+            El ciclo de desarrollo de sistemas de información es el proceso de
+            creación de sistemas de información.
+          </p>
+        </article>
+      </section>
+      <aside>
+        <h2>About me.</h2>
+        <article>
+          <h3>Diego Antonio García Padilla</h3>
+          <p>
+            Estudiante de la carrera de Ingeniería en Tecnologías
+            Computacionales en el Tecnológico de Monterrey, Campus Querétaro.
+          </p>
+          <ul>
+            <li>Presidente de la SEITC.</li>
+            <li>
+              Inscrito en el Eugenio Garza Sada Global Leadership Program.
+            </li>
+            <li>Mentor en el programa Peer Mentor.</li>
+          </ul>
+          <h4>Datos de contacto</h4>
+          <ul>
+            <li><strong>Correo:</strong> A01710777@tec.mx</li>
+            <li><strong>Teléfono:</strong> +52 55 1368 1749</li>
+          </ul>
+        </article>
+      </aside>
+    </div>
+    <footer>
+      <div>
+        <p>
+          Este sitio fue escrito en
+          <a href="https://code.visualstudio.com/">VSCode.</a>
+        </p>
+      </div>
+      <div>
+        <p>Diego Antonio García Padilla (A01710777)</p>
+      </div>
+    </footer>
+  </body>
+</html>
