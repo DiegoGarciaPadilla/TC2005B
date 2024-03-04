@@ -14,7 +14,7 @@ app.set('view engine', 'pug');
 
 // Rutas
 
-const rutas = require('./rutas');
+const rutas = require('./.routes.js');
 
 // Usar rutas
 

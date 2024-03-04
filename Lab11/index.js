@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Rutas
 
-const rutas = require('./rutas');
+const rutas = require('./.routes.js');
 
 // Usar rutas
 
