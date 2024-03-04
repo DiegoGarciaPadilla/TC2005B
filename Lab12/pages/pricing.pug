@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="icon" href="/favicon")
+    script(src="https://cdn.tailwindcss.com")
+    title We R Devs
+  body
+    // Navbar
+    include ../templates/navbar.pug
+
+    // Pricing
+    section.bg-gray-50
+      div.max-w-screen-xl.mx-auto.p-8
+        h1.text-4xl.font-bold.text-center Pricing
+        p.text-center.text-gray-500 Choose the plan that works for you
+        div(class="flex flex-col md:flex-row md:space-x-8 mt-8")
+          div.flex-1.bg-white.rounded-lg.shadow.p-8.text-center
+            h2.text-2xl.font-bold Basic
+            p.text-gray-500 For small teams
+            p.text-3xl.font-bold.mt-4 $10
+            p.text-gray-500 per user per month
+            button.mt-8.bg-red-300.text-white.rounded-lg.px-8.py-2 Choose Basic
+          div(class="flex-1 bg-white rounded-lg shadow p-8 text-center mt-8 md:mt-0")
+            h2.text-2xl.font-bold Pro
+            p.text-gray-500 For larger teams
+            p.text-3xl.font-bold.mt-4 $20
+            p.text-gray-500 per user per month
+            button.mt-8.bg-red-300.text-white.rounded-lg.px-8.py-2 Choose Pro
+
+    // Footer
+    include ../templates/footer.pug

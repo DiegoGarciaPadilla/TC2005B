@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="icon" href="/favicon")
+    script(src="https://cdn.tailwindcss.com")
+    title We R Devs
+  body
+    // Navbar
+    include ../templates/navbar.pug
+
+    // About
+    section.bg-gray-50
+      div.max-w-screen-xl.mx-auto.p-8
+        h2.text-4xl.font-bold.text-center Our History
+        p.text-lg.text-center.text-gray-500
+          | At the heart of the technological revolution, a team called "we r devs" is born. Founded by a group of passionate and visionary minds, our startup has a clear purpose: to simplify the world through transparency, disruption and a strong social commitment.
+      div.max-w-screen-xl.mx-auto.p-8
+        h2.text-4xl.font-bold.text-center Our Mission
+        p.text-lg.text-center.text-gray-500
+          | Our mission is to transform dreams into code, creating simple and accessible solutions, promoting transparency at every step, challenging the status quo with boldness and committing to use technology to build a better world. Join us on this journey where every line of code is a note in our symphony of innovation. "we r devs" - where dreams become reality, and code builds the future.
+
+    // Footer
+    include ../templates/footer.pug

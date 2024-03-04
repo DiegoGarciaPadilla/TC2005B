@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="icon" href="/favicon")
+    script(src="https://cdn.tailwindcss.com")
+    title We R Devs
+  body
+    // Navbar
+    include ../templates/navbar.pug
+
+    // Services
+    section.bg-gray-50
+      div.max-w-screen-xl.mx-auto.p-4
+        h1.text-4xl.font-bold.text-center Services
+        p.text-center.text-gray-500 We offer a wide range of services to help you grow your business.
+        div(class="grid grid-cols-1 gap-4 mt-8 md:grid-cols-2 lg:grid-cols-3")
+          div(class="bg-white rounded-lg shadow p-4 hover:bg-red-100")
+            h2.text-xl.font-bold Web Development
+            p.text-gray-500 We build websites that are fast, secure, and easy to manage.
+          div(class="bg-white rounded-lg shadow p-4 hover:bg-red-100")
+            h2.text-xl.font-bold Mobile Development
+            p.text-gray-500 We create mobile apps that are user-friendly and accessible.
+          div(class="bg-white rounded-lg shadow p-4 hover:bg-red-100")
+            h2.text-xl.font-bold SEO
+            p.text-gray-500 We optimize your website to rank higher on search engines.
+          div(class="bg-white rounded-lg shadow p-4 hover:bg-red-100")
+            h2.text-xl.font-bold Social Media
+            p.text-gray-500 We help you grow your business through social media marketing.
+          div(class="bg-white rounded-lg shadow p-4 hover:bg-red-100")
+            h2.text-xl.font-bold E-Commerce
+            p.text-gray-500 We build online stores that are easy to use and manage.
+          div(class="bg-white rounded-lg shadow p-4 hover:bg-red-100")
+            h2.text-xl.font-bold Content Writing
+            p.text-gray-500 We create engaging content that drives traffic to your website.
+
+    // Footer
+    include ../templates/footer.pug
