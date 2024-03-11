@@ -40,6 +40,11 @@
                     </div>
                 </div>
             </div>
+
+        <% if(ultimo_cultivo != '') { %> 
+            <div>La última tropa creada fue <%= ultimo_cultivo %>.</div>
+        <% } %>
+
             <% } %>
 
                 <%- include('includes/foot.ejs') %>
