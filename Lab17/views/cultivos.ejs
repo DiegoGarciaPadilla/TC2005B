@@ -1,0 +1,52 @@
+<%- include('includes/head.ejs') %>
+
+<h2 class="title">Stardew Valley</h2>
+<div class="columns">
+
+    <% for (let cultivo of cultivos) { %>
+
+        <div class="column">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img id="imagen_barbaro" src="<%= cultivo.imagen %>" alt="Imagen de <%= cultivo.clase %>">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="<%= cultivo.imagen %>" alt="Imagen de <%= cultivo.clase %>">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4">
+                                <%= cultivo.nombre %>
+                            </p>
+                            <p class="subtitle is-6">
+                                <%= cultivo.descripcion %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <p class="is-8"><strong>Cantidad:</strong> <span id="vida_barbaro">
+                                <%= cultivo.cantidad %>
+                            </span> <br></p>
+                        <p class="is-8"><strong>Precio:</strong> <span id="ataque_barbaro">
+                                $<%= cultivo.precio %>
+                            </span> <br> <br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <% } %>
+
+    <% if(ultimo_cultivo != '') { %> 
+        <div>El ultimo cultivo sembrado fue <%= ultimo_cultivo %>.</div>
+    <% } %>
+
+</div>
+
+<%- include('includes/foot.ejs') %>
