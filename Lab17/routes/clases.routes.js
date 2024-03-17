@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const tropasController = require('../controllers/cultivos.controller');
+const cultivosController = require('../controllers/cultivos.controller');
 
-router.get('/crear', tropasController.get_crear);
-router.post('/crear', tropasController.post_crear);
-router.get('/', tropasController.get_root);
+router.get('/crear', cultivosController.get_crear);
+router.post('/crear', cultivosController.post_crear);
+router.get('/:id', cultivosController.get_root);
+router.get('/', cultivosController.get_root);
 
 module.exports = router;

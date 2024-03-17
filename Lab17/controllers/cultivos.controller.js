@@ -15,17 +15,25 @@ exports.post_crear = (request, response, next) => {
     request.body.precio,
     request.body.imagen
   );
-  mi_cultivo.save();
-  response.setHeader("Set-Cookie", `ultimo_cultivo=${mi_cultivo.nombre}`);
-  response.redirect("/");
+  mi_cultivo.save().then(() => {
+    response.setHeader('Set-Cookie', 'ultimo_cultivo=' + mi_cultivo.nombre + '; HttpOnly');
+    response.redirect("/");
+  }).catch((err) => {
+    console.log(err);
+  });
 };
 
 exports.get_root = (request, response, next) => {
   console.log(request.cookies);
   console.log(request.cookies.ultimo_cultivo);
-  response.render("cultivos", {
-    cultivos: Cultivo.fetchAll(),
-    ultimo_cultivo: request.cookies.ultimo_cultivo || "",
-    username: request.session.username || "",
+
+  Cultivo.fetch(request.params.id).then(([rows, fieldData]) => {
+    response.render("cultivos", {
+      cultivos: rows,
+      ultimo_cultivo: request.cookies.ultimo_cultivo || "",
+      username: request.session.username || "",
+    });
+  }).catch((err) => {
+    console.log(err);
   });
 };
