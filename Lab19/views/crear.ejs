@@ -1,0 +1,15 @@
+<%- include('includes/head.ejs') %>
+<h2 class="title">Cultiva una nueva cosecha</h2>
+<form action="/crear" method="POST">
+    <label class="label" for="nombre">Nombre</label>
+    <input class="input text" id="nombre" name="nombre">
+    <label class="label" for="descripcion">Descripcion</label>
+    <input class="input text" id="descripcion" name="descripcion">
+    <label class="label" for="precio">Precio</label>
+    <input type="number" class="input text" id="precio" name="precio">
+    <label class="label" for="imagen">Imagen</label>
+    <input class="input text" id="imagen" name="imagen">
+    <br><br>
+    <input class="button is-success" type="submit" value="Crear">
+</form>
+<%- include('includes/foot.ejs') %>
