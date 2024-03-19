@@ -35,6 +35,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
+// Protección contra CSRF (Cross-Site Request Forgery)
+
+const csrf = require('csurf');
+const csrfProtection = csrf();
+app.use(csrfProtection);
+
 // Definir las rutas para el manejo de los usuarios
 
 const rutasUsuarios = require('./routes/users.routes');
@@ -42,7 +48,7 @@ app.use('/users', rutasUsuarios);
 
 // Definir las rutas para el manejo de las clases
 
-const rutasClases = require('./routes/clases.routes');
+const rutasClases = require('./routes/cultivos.routes');
 app.use('/', rutasClases);
 
 // Si no se encuentra la ruta, se manda un error 404

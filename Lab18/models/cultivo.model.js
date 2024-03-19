@@ -6,7 +6,6 @@ module.exports = class Cultivo {
   constructor(mi_nombre, mi_descripcion, mi_cantidad, mi_precio, mi_imagen) {
     this.nombre = mi_nombre;
     this.descripcion = mi_descripcion;
-    this.cantidad = mi_cantidad;
     this.precio = mi_precio;
     this.imagen = mi_imagen;
   }
@@ -14,9 +13,10 @@ module.exports = class Cultivo {
   // Este método servirá para guardar de manera persistente el nuevo objeto.
   save() {
     return db.execute(
-      "INSERT INTO cultivos (nombre, descripcion, cantidad, precio, imagen)  VALUES (?, ?, ?, ?, ?)",
+      "INSERT INTO cultivo (nombre, descripcion, precio, imagen) VALUES (?, ?, ?, ?, ?)",
       [this.nombre, this.descripcion, this.cantidad, this.precio, this.imagen]
     );
+    
   }
 
   // Este método servirá para devolver los objetos del almacenamiento persistente.
