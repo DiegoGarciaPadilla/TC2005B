@@ -28,4 +28,9 @@ module.exports = class User {
         return db.execute("SELECT * FROM user WHERE username = ?", [username]);
     }
 
+    // Este método servirá para devolver los privilegios de un usuario.
+    static fetchPriv(username) {
+        return db.execute("SELECT * FROM privilegio AS p JOIN user_privilegio AS up ON p.idprivilegio = up.idprivilegio WHERE up.username = ?", [username]);
+    }
+
 }

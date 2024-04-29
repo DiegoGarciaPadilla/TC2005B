@@ -37,8 +37,9 @@ app.use(cookieParser());
 
 // Protección contra CSRF (Cross-Site Request Forgery)
 
-const csrf = require('csurf');
+const csrf = require('csurf', {cookie: true});
 const csrfProtection = csrf();
+
 app.use(csrfProtection);
 
 // Definir las rutas para el manejo de los usuarios
@@ -53,9 +54,9 @@ app.use('/', rutasClases);
 
 // Si no se encuentra la ruta, se manda un error 404
 
-app.use((request, response, next) => {
-  response.status(404);
-  response.render('404')
+app.use((req, res, next) => {
+  res.status(404);
+  res.render('404')
 });
 
 // Iniciar el servidor

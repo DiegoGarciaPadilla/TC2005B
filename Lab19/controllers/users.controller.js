@@ -1,66 +1,79 @@
-const User = require('../models/user.model');   
-const bcrypt = require('bcryptjs');
+const User = require("../models/user.model");
+const bcrypt = require("bcryptjs");
 
-exports.get_login = (request, response, next) => {
-    const error = request.session.error || '';
-    request.session.error = '';
-    response.render('login', {
-        username: request.session.username || '',
+exports.get_login = (req, res, next) => {
+    const error = req.session.error || "";
+    req.session.error = "";
+    res.render("login", {
+        username: req.session.username || "",
         registro: false,
-        csrfToken: request.csrfToken(),
-        error: error
+        csrfToken: req.csrfToken(),
+        error: error,
     });
 };
 
-exports.post_login = (request, response, next) => {
-    User.fetchOne(request.body.username)
-        .then(([users, fieldData]) => {
+exports.post_login = (req, res, next) => {
+    User.fetchOne(req.body.username)
+        .then(([users]) => {
             if (users.length == 1) {
                 const user = users[0];
-                bcrypt.compare(request.body.password, user.password)
+                bcrypt
+                    .compare(req.body.password, user.password)
                     .then((doMatch) => {
-                        if(doMatch) {
-                            request.session.username = user.username;
-                            request.session.isLoggedIn = true;
-                            response.redirect('/');
+                        if (doMatch) {
+                            req.session.username = user.username;
+                            req.session.isLoggedIn = true;
+                            res.redirect("/");
                         } else {
-                            request.session.error = "Usuario y/o contraseña incorrectos";
-                            response.redirect('/users/login');
+                            req.session.error =
+                                "Usuario y/o contraseña incorrectos";
+                            res.redirect("login");
                         }
                     })
                     .catch((error) => {
                         console.log(error);
                     });
             } else {
-                request.session.error = "Usuario y/o contraseña incorrectos";
-                response.redirect('/users/login');
+                req.session.error = "Usuario y/o contraseña incorrectos";
+                res.redirect("login");
             }
         })
-        .catch((error) => {console.log(error);});
+        .catch((error) => {
+            console.log(error);
+        });
 };
 
-exports.get_logout = (request, response, next) => {
-    request.session.destroy(() => {
-        response.redirect('/users/login'); //Este código se ejecuta cuando la sesión se elimina.
+exports.get_logout = (req, res, next) => {
+    req.session.destroy(() => {
+        res.redirect("/login"); //Este código se ejecuta cuando la sesión se elimina.
     });
 };
 
-exports.get_signup = (request, response, next) => {
-    response.render('login', {
-        username: request.session.username || '',
+exports.get_signup = (req, res, next) => {
+    res.render("login", {
+        username: req.session.username || "",
         registro: true,
-        csrfToken: request.csrfToken(),
-        error: ''
+        csrfToken: req.csrfToken(),
+        error: "",
     });
 };
 
-exports.post_signup = (request, response, next) => {
-    const new_user = new User(
-        request.body.username, request.body.name, request.body.password
-    );
-    new_user.save()
+exports.post_signup = (req, res, next) => {
+    // Obtener el usuario y contraseña
+    const { username, password } = req.body;
+
+    console.log("Usuario: " + username);
+    console.log("Contraseña: " + password);
+
+    // Guardar en la base de datos (la password se cifra en el modelo)
+    const user = new User(username, password);
+
+    user.save()
         .then(() => {
-            response.redirect('/users/login');
+            res.redirect("login", {
+                registro: true,
+                csrfToken: req.csrfToken(),
+            });
         })
         .catch((error) => {
             console.log(error);
